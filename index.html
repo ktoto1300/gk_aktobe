@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Breve — Кофейня</title>
+  <title>Демонстрация макета</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#menu" onclick="closeMenu()">Меню</a>
+    <a href="#catalog" onclick="closeMenu()">Каталог</a>
     <a href="#about" onclick="closeMenu()">О нас</a>
-    <a href="#cta" onclick="closeMenu()">Заказать</a>
+    <a href="#cta" onclick="closeMenu()">Контакты</a>
   </div>
 
   <nav>
-    <div class="logo">Br<span>e</span>ve</div>
+    <div class="logo">Лого<span>тип</span></div>
     <ul class="nav-links">
-      <li><a href="#menu">Меню</a></li>
+      <li><a href="#catalog">Каталог</a></li>
       <li><a href="#about">О нас</a></li>
-      <li><a href="#cta" class="nav-cta">Заказать</a></li>
+      <li><a href="#cta" class="nav-cta">Действие</a></li>
     </ul>
     <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Меню">
       <span></span><span></span><span></span>
@@ -27,98 +27,105 @@
   </nav>
 
   <section class="hero">
-    <img
-      class="hero-img"
-      src="IMG_20260512_113035_439.jpg"
-      alt="Кофе"
-    />
+    <div class="hero-placeholder"></div>
     <div class="hero-content">
-      <span class="hero-tag">Specialty Coffee · Москва</span>
-      <h1>Каждый глоток —<br><em>маленькое</em><br>удовольствие</h1>
-      <p>Авторские напитки из отборных зёрен со всего мира. Уютная атмосфера и бариста, влюблённые в своё дело.</p>
+      <span class="hero-tag">Категория бизнеса · Город</span>
+      <h1>Главный заголовок<br><em>вашего</em><br>проекта</h1>
+      <p>Краткое описание деятельности компании. Здесь располагается основное торговое предложение для клиента.</p>
       <div class="hero-btns">
-        <button class="btn-primary" onclick="document.querySelector('#menu').scrollIntoView({behavior:'smooth'})">Смотреть меню</button>
+        <button class="btn-primary" onclick="document.querySelector('#catalog').scrollIntoView({behavior:'smooth'})">Смотреть услуги</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>XX</strong><span>Метрика 1</span></div>
+        <div class="stat"><strong>XX+</strong><span>Метрика 2</span></div>
+        <div class="stat"><strong>XXX</strong><span>Метрика 3</span></div>
       </div>
     </div>
   </section>
 
   <div class="strip">
-    <div class="strip-item"><div class="strip-dot"></div>Specialty Third Wave</div>
-    <div class="strip-item"><div class="strip-dot"></div>Свежеобжаренные зёрна</div>
-    <div class="strip-item"><div class="strip-dot"></div>Авторская выпечка</div>
-    <div class="strip-item"><div class="strip-dot"></div>Пн – Вс · 08:00 – 22:00</div>
+    <div class="strip-item"><div class="strip-dot"></div>Ключевое преимущество 1</div>
+    <div class="strip-item"><div class="strip-dot"></div>Ключевое преимущество 2</div>
+    <div class="strip-item"><div class="strip-dot"></div>Ключевое преимущество 3</div>
+    <div class="strip-item"><div class="strip-dot"></div>Режим работы / Формат</div>
   </div>
 
-  <section class="menu" id="menu">
+  <section class="menu" id="catalog">
     <div class="menu-intro menu-head reveal">
       <div>
-        <div class="section-label">Наше меню</div>
-        <div class="section-title">Что вас сегодня<br>порадует?</div>
+        <div class="section-label">Раздел контента</div>
+        <div class="section-title">Каталог товаров<br>или услуг</div>
+        <div class="menu-tabs">
+          <button class="tab active">Группа 1</button>
+          <button class="tab">Группа 2</button>
+          <button class="tab">Группа 3</button>
+        </div>
       </div>
-      <p class="section-sub">Все напитки готовятся из зёрен обжарки этой недели.</p>
+      <p class="section-sub">Дополнительный поясняющий текст к разделу каталога. Уточнение деталей или условий.</p>
     </div>
 
     <div class="menu-grid">
       <div class="menu-card reveal">
-        <img src="IMG_20260512_113020_665.jpg" alt="Флэт Уайт" class="card-img-file">
+        <div class="card-placeholder"></div>
         <div class="card-body">
-          <div class="card-name">Флэт Уайт</div>
-          <div class="card-desc">Двойной эспрессо с бархатным молоком.</div>
-          <div class="card-foot">
-            <span class="price">290 ₽</span>
-            <button class="add-btn">+</button>
-          </div>
+          <div class="card-name">Название позиции 1</div>
+          <div class="card-desc">Краткое описание характеристик, состава или особенностей данной позиции.</div>
         </div>
       </div>
 
       <div class="menu-card reveal">
-        <img src="IMG_20260512_113015_693.jpg" alt="Раф Ваниль" class="card-img-file">
+        <div class="card-placeholder"></div>
         <div class="card-body">
-          <div class="card-name">Раф «Ваниль»</div>
-          <div class="card-desc">Эспрессо, сливки и натуральная ваниль.</div>
-          <div class="card-foot">
-            <span class="price">350 ₽</span>
-            <button class="add-btn">+</button>
-          </div>
+          <div class="card-name">Название позиции 2</div>
+          <div class="card-desc">Краткое описание характеристик, состава или особенностей данной позиции.</div>
         </div>
       </div>
 
       <div class="menu-card reveal">
-        <img src="IMG_20260512_113011_098.jpg" alt="Круассан" class="card-img-file">
+        <div class="card-placeholder"></div>
         <div class="card-body">
-          <div class="card-name">Круассан</div>
-          <div class="card-desc">Слоёный, хрустящий, выпекается каждое утро.</div>
-          <div class="card-foot">
-            <span class="price">260 ₽</span>
-            <button class="add-btn">+</button>
-          </div>
+          <div class="card-name">Название позиции 3</div>
+          <div class="card-desc">Краткое описание характеристик, состава или особенностей данной позиции.</div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="about" id="about">
-    <img
-      class="about-img"
-      src="IMG_20260512_113035_439.jpg"
-      alt="Интерьер"
-    />
+    <div class="about-placeholder"></div>
     <div class="about-body reveal">
-      <div class="section-label">Атмосфера</div>
-      <div class="section-title">Место, куда<br>хочется вернуться</div>
-      <p class="section-sub">Мы создали пространство, где замедляешься. Где утро начинается правильно.</p>
+      <div class="section-label">Информация</div>
+      <div class="section-title">Блок о компании<br>или подходе</div>
+      <p class="section-sub">Текст, раскрывающий суть бизнеса, историю создания или главные принципы работы с клиентами.</p>
+      <div class="features">
+        <div class="feat">
+          <div class="feat-icon">✦</div>
+          <div class="feat-body">
+            <strong>Сильная сторона 1</strong>
+            <span>Раскрытие первого важного факта о вас</span>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon">⚡</div>
+          <div class="feat-body">
+            <strong>Сильная сторона 2</strong>
+            <span>Раскрытие второго важного факта о вас</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="cta" id="cta">
-    <div class="section-label">Ждем вас</div>
-    <div class="section-title reveal">Почувствуйте вкус<br>настоящего кофе</div>
+    <div class="section-label">Призыв к действию</div>
+    <div class="section-title reveal">Финальный блок<br>для конверсии</div>
+    <p class="section-sub">Текст, мотивирующий оставить заявку или связаться с вами.</p>
   </section>
 
   <footer>
     <div class="footer-brand">
-      <span class="logo">Br<span>e</span>ve</span>
-      <p>© 2026 Breve Coffee. Ул. Арбат, 24.</p>
+      <span class="logo">Лого<span>тип</span></span>
+      <p>© 2026 Название компании. Все права защищены.</p>
     </div>
   </footer>
 
