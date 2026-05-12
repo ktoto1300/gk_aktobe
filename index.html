@@ -8,24 +8,17 @@
 </head>
 <body>
 
-  <!-- BADGE -->
-  <div class="demo-badge">✦ Демо-версия сайта</div>
-
-  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#menu" onclick="closeMenu()">Меню</a>
     <a href="#about" onclick="closeMenu()">О нас</a>
-    <a href="#reviews" onclick="closeMenu()">Отзывы</a>
     <a href="#cta" onclick="closeMenu()">Заказать</a>
   </div>
 
-  <!-- NAV -->
   <nav>
     <div class="logo">Br<span>e</span>ve</div>
     <ul class="nav-links">
       <li><a href="#menu">Меню</a></li>
       <li><a href="#about">О нас</a></li>
-      <li><a href="#reviews">Отзывы</a></li>
       <li><a href="#cta" class="nav-cta">Заказать</a></li>
     </ul>
     <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Меню">
@@ -33,11 +26,10 @@
     </button>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <img
       class="hero-img"
-      src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&auto=format&fit=crop&q=80"
+      src="IMG_20260512_113035_439.jpg"
       alt="Кофе"
     />
     <div class="hero-content">
@@ -46,47 +38,32 @@
       <p>Авторские напитки из отборных зёрен со всего мира. Уютная атмосфера и бариста, влюблённые в своё дело.</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="document.querySelector('#menu').scrollIntoView({behavior:'smooth'})">Смотреть меню</button>
-        <button class="btn-outline" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">О нас →</button>
-      </div>
-      <div class="hero-stats">
-        <div class="stat"><strong>4.9</strong><span>Рейтинг</span></div>
-        <div class="stat"><strong>12+</strong><span>Лет опыта</span></div>
-        <div class="stat"><strong>40+</strong><span>Позиций</span></div>
       </div>
     </div>
   </section>
 
-  <!-- STRIP -->
   <div class="strip">
     <div class="strip-item"><div class="strip-dot"></div>Specialty Third Wave</div>
     <div class="strip-item"><div class="strip-dot"></div>Свежеобжаренные зёрна</div>
     <div class="strip-item"><div class="strip-dot"></div>Авторская выпечка</div>
     <div class="strip-item"><div class="strip-dot"></div>Пн – Вс · 08:00 – 22:00</div>
-    <div class="strip-item"><div class="strip-dot"></div>ул. Арбат, 24</div>
   </div>
 
-  <!-- MENU -->
   <section class="menu" id="menu">
     <div class="menu-intro menu-head reveal">
       <div>
         <div class="section-label">Наше меню</div>
         <div class="section-title">Что вас сегодня<br>порадует?</div>
-        <div class="menu-tabs">
-          <button class="tab active">Кофе</button>
-          <button class="tab">Альтернатива</button>
-          <button class="tab">Выпечка</button>
-          <button class="tab">Завтраки</button>
-        </div>
       </div>
-      <p class="section-sub">Все напитки готовятся из зёрен обжарки этой недели. Выбирайте молоко: коровье, овсяное, миндальное, соевое.</p>
+      <p class="section-sub">Все напитки готовятся из зёрен обжарки этой недели.</p>
     </div>
 
     <div class="menu-grid">
       <div class="menu-card reveal">
-        <div class="card-img">☕</div>
+        <img src="IMG_20260512_113020_665.jpg" alt="Флэт Уайт" class="card-img-file">
         <div class="card-body">
           <div class="card-name">Флэт Уайт</div>
-          <div class="card-desc">Двойной эспрессо с бархатным молоком. Плотный и насыщенный.</div>
+          <div class="card-desc">Двойной эспрессо с бархатным молоком.</div>
           <div class="card-foot">
             <span class="price">290 ₽</span>
             <button class="add-btn">+</button>
@@ -95,10 +72,10 @@
       </div>
 
       <div class="menu-card reveal">
-        <div class="card-img">🥛</div>
+        <img src="IMG_20260512_113015_693.jpg" alt="Раф Ваниль" class="card-img-file">
         <div class="card-body">
           <div class="card-name">Раф «Ваниль»</div>
-          <div class="card-desc">Эспрессо, сливки и натуральная ваниль — взбитые в пышную пену.</div>
+          <div class="card-desc">Эспрессо, сливки и натуральная ваниль.</div>
           <div class="card-foot">
             <span class="price">350 ₽</span>
             <button class="add-btn">+</button>
@@ -107,46 +84,10 @@
       </div>
 
       <div class="menu-card reveal">
-        <div class="card-img">🍯</div>
-        <div class="card-body">
-          <div class="card-name">Карамельный Латте</div>
-          <div class="card-desc">Молоко, эспрессо и домашняя солёная карамель.</div>
-          <div class="card-foot">
-            <span class="price">380 ₽</span>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal">
-        <div class="card-img">🧊</div>
-        <div class="card-body">
-          <div class="card-name">Айс Матча</div>
-          <div class="card-desc">Церемониальная матча, овсяное молоко и лёд.</div>
-          <div class="card-foot">
-            <span class="price">420 ₽</span>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal">
-        <div class="card-img">🫖</div>
-        <div class="card-body">
-          <div class="card-name">Пуэр «Золотой»</div>
-          <div class="card-desc">Выдержанный чай с землистыми нотами. На две чашки.</div>
-          <div class="card-foot">
-            <span class="price">310 ₽</span>
-            <button class="add-btn">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-card reveal">
-        <div class="card-img">🥐</div>
+        <img src="IMG_20260512_113011_098.jpg" alt="Круассан" class="card-img-file">
         <div class="card-body">
           <div class="card-name">Круассан</div>
-          <div class="card-desc">Слоёный, хрустящий, с франжипаном. Выпекается каждое утро.</div>
+          <div class="card-desc">Слоёный, хрустящий, выпекается каждое утро.</div>
           <div class="card-foot">
             <span class="price">260 ₽</span>
             <button class="add-btn">+</button>
@@ -156,151 +97,32 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="about" id="about">
     <img
       class="about-img"
-      src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&auto=format&fit=crop&q=80"
+      src="IMG_20260512_113035_439.jpg"
       alt="Интерьер"
     />
     <div class="about-body reveal">
       <div class="section-label">Атмосфера</div>
       <div class="section-title">Место, куда<br>хочется вернуться</div>
-      <p class="section-sub">Мы создали пространство, где замедляешься. Где утро начинается правильно, а встречи затягиваются до вечера.</p>
-      <div class="features">
-        <div class="feat">
-          <div class="feat-icon">🌿</div>
-          <div class="feat-body">
-            <strong>Живые растения и натуральные материалы</strong>
-            <span>Дерево, лён, терракота — мы думали о каждой детали</span>
-          </div>
-        </div>
-        <div class="feat">
-          <div class="feat-icon">🎵</div>
-          <div class="feat-body">
-            <strong>Живая музыка по пятницам</strong>
-            <span>Джаз, акустика, этника — каждый раз разные исполнители</span>
-          </div>
-        </div>
-        <div class="feat">
-          <div class="feat-icon">⚡</div>
-          <div class="feat-body">
-            <strong>Wi-Fi и розетки на каждом столе</strong>
-            <span>Работайте в удовольствие с хорошим кофе рядом</span>
-          </div>
-        </div>
-      </div>
+      <p class="section-sub">Мы создали пространство, где замедляешься. Где утро начинается правильно.</p>
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="reviews" id="reviews">
-    <div class="reveal">
-      <div class="section-label">Отзывы</div>
-      <div class="section-title">Что говорят гости</div>
-    </div>
-    <div class="reviews-grid">
-      <div class="tcard reveal">
-        <div class="qmark">"</div>
-        <p class="tcard-text">Лучший флэт уайт в городе — без преувеличений. Хожу сюда каждое утро уже полгода. Бариста помнят моё имя и заказ.</p>
-        <div class="tcard-author">
-          <div class="avatar">👩</div>
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="aname">Анна К.</div>
-            <div class="atag">Постоянный гость</div>
-          </div>
-        </div>
-      </div>
-      <div class="tcard reveal">
-        <div class="qmark">"</div>
-        <p class="tcard-text">Работаю здесь с ноутбуком почти каждый день. Атмосфера располагает к продуктивности, а кофе — огонь.</p>
-        <div class="tcard-author">
-          <div class="avatar">👨</div>
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="aname">Максим Д.</div>
-            <div class="atag">Дизайнер</div>
-          </div>
-        </div>
-      </div>
-      <div class="tcard reveal">
-        <div class="qmark">"</div>
-        <p class="tcard-text">Раф с ванилью — просто мечта. Персонал всегда улыбается и готов посоветовать. Привела сюда уже всех подруг.</p>
-        <div class="tcard-author">
-          <div class="avatar">👩‍🦰</div>
-          <div>
-            <div class="stars">★★★★★</div>
-            <div class="aname">Лера В.</div>
-            <div class="atag">Гость</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
   <section class="cta" id="cta">
-    <div class="section-label">Начнём?</div>
-    <div class="section-title reveal">Ваш сайт может<br>выглядеть именно так</div>
-    <p class="section-sub">Это демонстрация — покажите её нам, и мы сделаем сайт под ваш бренд, меню и стиль.</p>
-    <div class="cta-btns">
-      <button class="btn-light">Обсудить проект</button>
-      <button class="btn-ghost">Другие примеры</button>
-    </div>
+    <div class="section-label">Ждем вас</div>
+    <div class="section-title reveal">Почувствуйте вкус<br>настоящего кофе</div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-brand">
       <span class="logo">Br<span>e</span>ve</span>
-      <p>Specialty-кофейня в самом сердце Арбата. Открыты каждый день с 08:00 до 22:00.</p>
-    </div>
-    <div class="footer-cols">
-      <div class="footer-col">
-        <h4>Меню</h4>
-        <ul>
-          <li><a href="#">Кофе</a></li>
-          <li><a href="#">Альтернатива</a></li>
-          <li><a href="#">Еда</a></li>
-          <li><a href="#">Завтраки</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Информация</h4>
-        <ul>
-          <li><a href="#">О нас</a></li>
-          <li><a href="#">Карьера</a></li>
-          <li><a href="#">Франшиза</a></li>
-          <li><a href="#">Контакты</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Соцсети</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Telegram</a></li>
-          <li><a href="#">ВКонтакте</a></li>
-          <li><a href="#">TikTok</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Контакты</h4>
-        <ul>
-          <li><a href="#">ул. Арбат, 24</a></li>
-          <li><a href="#">+7 (495) 000-00-00</a></li>
-          <li><a href="#">hello@breve.cafe</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-btm">
-      <p>© 2025 Breve Coffee. Все права защищены.</p>
-      <p>Демо-сайт · Сделано с ☕</p>
+      <p>© 2026 Breve Coffee. Ул. Арбат, 24.</p>
     </div>
   </footer>
 
   <script>
-    // ── Mobile menu
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');
       const burger = document.getElementById('burger');
@@ -314,27 +136,6 @@
       document.body.style.overflow = '';
     }
 
-    // ── Tabs
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-      });
-    });
-
-    // ── Add btn feedback
-    document.querySelectorAll('.add-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.textContent = '✓';
-        btn.style.background = 'var(--caramel)';
-        setTimeout(() => {
-          btn.textContent = '+';
-          btn.style.background = '';
-        }, 1200);
-      });
-    });
-
-    // ── Scroll reveal
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
