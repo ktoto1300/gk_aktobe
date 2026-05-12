@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Breve — Кофейня</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,36 +11,43 @@
   <!-- BADGE -->
   <div class="demo-badge">✦ Демо-версия сайта</div>
 
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#menu" onclick="closeMenu()">Меню</a>
+    <a href="#about" onclick="closeMenu()">О нас</a>
+    <a href="#reviews" onclick="closeMenu()">Отзывы</a>
+    <a href="#cta" onclick="closeMenu()">Заказать</a>
+  </div>
+
   <!-- NAV -->
   <nav>
     <div class="logo">Br<span>e</span>ve</div>
-    <ul>
+    <ul class="nav-links">
       <li><a href="#menu">Меню</a></li>
-      <li><a href="#atmosphere">О нас</a></li>
+      <li><a href="#about">О нас</a></li>
       <li><a href="#reviews">Отзывы</a></li>
-      <li><a href="#cta" class="nav-btn">Заказать</a></li>
+      <li><a href="#cta" class="nav-cta">Заказать</a></li>
     </ul>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-left">
+    <img
+      class="hero-img"
+      src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&auto=format&fit=crop&q=80"
+      alt="Кофе"
+    />
+    <div class="hero-content">
       <span class="hero-tag">Specialty Coffee · Москва</span>
       <h1>Каждый глоток —<br><em>маленькое</em><br>удовольствие</h1>
-      <p>Авторские напитки из отборных зёрен со всего мира. Уютная атмосфера, живая музыка по пятницам и бариста, влюблённые в своё дело.</p>
-      <div class="hero-actions">
-        <button class="btn-primary">Смотреть меню</button>
-        <button class="btn-outline">Наш адрес →</button>
+      <p>Авторские напитки из отборных зёрен со всего мира. Уютная атмосфера и бариста, влюблённые в своё дело.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="document.querySelector('#menu').scrollIntoView({behavior:'smooth'})">Смотреть меню</button>
+        <button class="btn-outline" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">О нас →</button>
       </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-img-wrap">
-        <img
-          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&auto=format&fit=crop"
-          alt="Кофе"
-        />
-      </div>
-      <div class="hero-blob"></div>
       <div class="hero-stats">
         <div class="stat"><strong>4.9</strong><span>Рейтинг</span></div>
         <div class="stat"><strong>12+</strong><span>Лет опыта</span></div>
@@ -60,7 +67,7 @@
 
   <!-- MENU -->
   <section class="menu" id="menu">
-    <div class="menu-header">
+    <div class="menu-intro menu-head reveal">
       <div>
         <div class="section-label">Наше меню</div>
         <div class="section-title">Что вас сегодня<br>порадует?</div>
@@ -73,14 +80,14 @@
       </div>
       <p class="section-sub">Все напитки готовятся из зёрен обжарки этой недели. Выбирайте молоко: коровье, овсяное, миндальное, соевое.</p>
     </div>
-    <div class="menu-grid">
 
+    <div class="menu-grid">
       <div class="menu-card reveal">
-        <div class="menu-card-img">☕</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Флэт Уайт</div>
-          <div class="menu-card-desc">Двойной эспрессо с бархатным молоком. Плотный, насыщенный, без лишних слов.</div>
-          <div class="menu-card-foot">
+        <div class="card-img">☕</div>
+        <div class="card-body">
+          <div class="card-name">Флэт Уайт</div>
+          <div class="card-desc">Двойной эспрессо с бархатным молоком. Плотный и насыщенный.</div>
+          <div class="card-foot">
             <span class="price">290 ₽</span>
             <button class="add-btn">+</button>
           </div>
@@ -88,11 +95,11 @@
       </div>
 
       <div class="menu-card reveal">
-        <div class="menu-card-img">🥛</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Раф «Ваниль»</div>
-          <div class="menu-card-desc">Эспрессо, сливки и натуральный экстракт ванили — взбитые в пышную пену.</div>
-          <div class="menu-card-foot">
+        <div class="card-img">🥛</div>
+        <div class="card-body">
+          <div class="card-name">Раф «Ваниль»</div>
+          <div class="card-desc">Эспрессо, сливки и натуральная ваниль — взбитые в пышную пену.</div>
+          <div class="card-foot">
             <span class="price">350 ₽</span>
             <button class="add-btn">+</button>
           </div>
@@ -100,11 +107,11 @@
       </div>
 
       <div class="menu-card reveal">
-        <div class="menu-card-img">🍯</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Карамельный Лате</div>
-          <div class="menu-card-desc">Мягкое молоко, эспрессо и домашняя солёная карамель. Уютно до последней капли.</div>
-          <div class="menu-card-foot">
+        <div class="card-img">🍯</div>
+        <div class="card-body">
+          <div class="card-name">Карамельный Латте</div>
+          <div class="card-desc">Молоко, эспрессо и домашняя солёная карамель.</div>
+          <div class="card-foot">
             <span class="price">380 ₽</span>
             <button class="add-btn">+</button>
           </div>
@@ -112,11 +119,11 @@
       </div>
 
       <div class="menu-card reveal">
-        <div class="menu-card-img">🧊</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Айс Матча Латте</div>
-          <div class="menu-card-desc">Церемониальная матча, овсяное молоко и лёд. Освежает и бодрит без кофеина.</div>
-          <div class="menu-card-foot">
+        <div class="card-img">🧊</div>
+        <div class="card-body">
+          <div class="card-name">Айс Матча</div>
+          <div class="card-desc">Церемониальная матча, овсяное молоко и лёд.</div>
+          <div class="card-foot">
             <span class="price">420 ₽</span>
             <button class="add-btn">+</button>
           </div>
@@ -124,11 +131,11 @@
       </div>
 
       <div class="menu-card reveal">
-        <div class="menu-card-img">🫖</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Пуэр «Золотой»</div>
-          <div class="menu-card-desc">Выдержанный чай с землистыми нотами. Подаётся в чайнике на две чашки.</div>
-          <div class="menu-card-foot">
+        <div class="card-img">🫖</div>
+        <div class="card-body">
+          <div class="card-name">Пуэр «Золотой»</div>
+          <div class="card-desc">Выдержанный чай с землистыми нотами. На две чашки.</div>
+          <div class="card-foot">
             <span class="price">310 ₽</span>
             <button class="add-btn">+</button>
           </div>
@@ -136,34 +143,27 @@
       </div>
 
       <div class="menu-card reveal">
-        <div class="menu-card-img">🥐</div>
-        <div class="menu-card-body">
-          <div class="menu-card-name">Круассан с миндалём</div>
-          <div class="menu-card-desc">Слоёный, хрустящий, с франжипаном и нежным кремом. Выпекается каждое утро.</div>
-          <div class="menu-card-foot">
+        <div class="card-img">🥐</div>
+        <div class="card-body">
+          <div class="card-name">Круассан</div>
+          <div class="card-desc">Слоёный, хрустящий, с франжипаном. Выпекается каждое утро.</div>
+          <div class="card-foot">
             <span class="price">260 ₽</span>
             <button class="add-btn">+</button>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ATMOSPHERE -->
-  <section class="atmosphere" id="atmosphere">
-    <div class="atm-gallery">
-      <div class="atm-photo">
-        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=700&auto=format&fit=crop" alt="Интерьер" />
-      </div>
-      <div class="atm-photo">
-        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&auto=format&fit=crop" alt="Бариста" />
-      </div>
-      <div class="atm-photo">
-        <img src="https://images.unsplash.com/photo-1442975631134-5f96e2963f4b?w=600&auto=format&fit=crop" alt="Кофе" />
-      </div>
-    </div>
-    <div class="atm-text reveal">
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <img
+      class="about-img"
+      src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1000&auto=format&fit=crop&q=80"
+      alt="Интерьер"
+    />
+    <div class="about-body reveal">
       <div class="section-label">Атмосфера</div>
       <div class="section-title">Место, куда<br>хочется вернуться</div>
       <p class="section-sub">Мы создали пространство, где замедляешься. Где утро начинается правильно, а встречи затягиваются до вечера.</p>
@@ -193,64 +193,60 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="reviews">
-    <div class="testi-header reveal">
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="reveal">
       <div class="section-label">Отзывы</div>
       <div class="section-title">Что говорят гости</div>
     </div>
-    <div class="testi-grid">
-
-      <div class="testi-card reveal">
-        <div class="quote-mark">"</div>
-        <p class="testi-text">Лучший флэт уайт в городе — без преувеличений. Хожу сюда каждое утро уже полгода. Бариста помнят моё имя и заказ.</p>
-        <div class="testi-author">
-          <div class="author-avatar">👩</div>
+    <div class="reviews-grid">
+      <div class="tcard reveal">
+        <div class="qmark">"</div>
+        <p class="tcard-text">Лучший флэт уайт в городе — без преувеличений. Хожу сюда каждое утро уже полгода. Бариста помнят моё имя и заказ.</p>
+        <div class="tcard-author">
+          <div class="avatar">👩</div>
           <div>
             <div class="stars">★★★★★</div>
-            <div class="author-name">Анна К.</div>
-            <div class="author-tag">Постоянный гость</div>
+            <div class="aname">Анна К.</div>
+            <div class="atag">Постоянный гость</div>
           </div>
         </div>
       </div>
-
-      <div class="testi-card reveal">
-        <div class="quote-mark">"</div>
-        <p class="testi-text">Работаю здесь из ноутбука почти каждый день. Атмосфера располагает к продуктивности, а кофе не даёт засыпать — и это приятно.</p>
-        <div class="testi-author">
-          <div class="author-avatar">👨</div>
+      <div class="tcard reveal">
+        <div class="qmark">"</div>
+        <p class="tcard-text">Работаю здесь с ноутбуком почти каждый день. Атмосфера располагает к продуктивности, а кофе — огонь.</p>
+        <div class="tcard-author">
+          <div class="avatar">👨</div>
           <div>
             <div class="stars">★★★★★</div>
-            <div class="author-name">Максим Д.</div>
-            <div class="author-tag">Дизайнер</div>
+            <div class="aname">Максим Д.</div>
+            <div class="atag">Дизайнер</div>
           </div>
         </div>
       </div>
-
-      <div class="testi-card reveal">
-        <div class="quote-mark">"</div>
-        <p class="testi-text">Раф с ванилью — просто мечта. Плюс персонал всегда улыбается и готов посоветовать. Приводила сюда уже всех подруг.</p>
-        <div class="testi-author">
-          <div class="author-avatar">👩‍🦰</div>
+      <div class="tcard reveal">
+        <div class="qmark">"</div>
+        <p class="tcard-text">Раф с ванилью — просто мечта. Персонал всегда улыбается и готов посоветовать. Привела сюда уже всех подруг.</p>
+        <div class="tcard-author">
+          <div class="avatar">👩‍🦰</div>
           <div>
             <div class="stars">★★★★★</div>
-            <div class="author-name">Лера В.</div>
-            <div class="author-tag">Гость из Instagram</div>
+            <div class="aname">Лера В.</div>
+            <div class="atag">Гость</div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta" id="cta">
     <div class="section-label">Начнём?</div>
-    <div class="section-title">Ваш сайт может<br>выглядеть именно так</div>
+    <div class="section-title reveal">Ваш сайт может<br>выглядеть именно так</div>
     <p class="section-sub">Это демонстрация — покажите её нам, и мы сделаем сайт под ваш бренд, меню и стиль.</p>
-    <div class="cta-actions">
+    <div class="cta-btns">
       <button class="btn-light">Обсудить проект</button>
-      <button class="btn-ghost">Посмотреть другие примеры</button>
+      <button class="btn-ghost">Другие примеры</button>
     </div>
   </section>
 
@@ -260,41 +256,65 @@
       <span class="logo">Br<span>e</span>ve</span>
       <p>Specialty-кофейня в самом сердце Арбата. Открыты каждый день с 08:00 до 22:00.</p>
     </div>
-    <div class="footer-col">
-      <h4>Меню</h4>
-      <ul>
-        <li><a href="#">Кофе</a></li>
-        <li><a href="#">Альтернатива</a></li>
-        <li><a href="#">Еда</a></li>
-        <li><a href="#">Завтраки</a></li>
-      </ul>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="#">Кофе</a></li>
+          <li><a href="#">Альтернатива</a></li>
+          <li><a href="#">Еда</a></li>
+          <li><a href="#">Завтраки</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Информация</h4>
+        <ul>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Карьера</a></li>
+          <li><a href="#">Франшиза</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Соцсети</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">ВКонтакте</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="#">ул. Арбат, 24</a></li>
+          <li><a href="#">+7 (495) 000-00-00</a></li>
+          <li><a href="#">hello@breve.cafe</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Информация</h4>
-      <ul>
-        <li><a href="#">О нас</a></li>
-        <li><a href="#">Карьера</a></li>
-        <li><a href="#">Франшиза</a></li>
-        <li><a href="#">Контакты</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Соцсети</h4>
-      <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Telegram</a></li>
-        <li><a href="#">ВКонтакте</a></li>
-        <li><a href="#">TikTok</a></li>
-      </ul>
+    <div class="footer-btm">
+      <p>© 2025 Breve Coffee. Все права защищены.</p>
+      <p>Демо-сайт · Сделано с ☕</p>
     </div>
   </footer>
-  <div class="footer-bottom">
-    <p>© 2025 Breve Coffee. Все права защищены.</p>
-    <p>Демо-сайт · Сделано с ☕</p>
-  </div>
 
   <script>
-    // Tab switching (menu)
+    // ── Mobile menu
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const burger = document.getElementById('burger');
+      menu.classList.toggle('open');
+      burger.classList.toggle('open');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('burger').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ── Tabs
     document.querySelectorAll('.tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -302,19 +322,7 @@
       });
     });
 
-    // Scroll reveal
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Add to cart micro-interaction
+    // ── Add btn feedback
     document.querySelectorAll('.add-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         btn.textContent = '✓';
@@ -325,6 +333,17 @@
         }, 1200);
       });
     });
+
+    // ── Scroll reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>
 </html>
